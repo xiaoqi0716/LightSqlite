@@ -166,7 +166,9 @@ public abstract class AbstractDBHelper {
             }
             sql.deleteCharAt(sql.length() - 2);
             sql.append(")");
+            LogUtils.v("---------------------LightSQLite--------------------------");
             LogUtils.v(sql.toString());
+            LogUtils.v("----------------------------------------------------------");
             try {
                 db.execSQL(sql.toString());
             } catch (Exception e) {
@@ -179,7 +181,9 @@ public abstract class AbstractDBHelper {
                     if (an.index()) {
                         String sqlStr = "CREATE INDEX IF NOT EXISTS " + table.getTableName() + "_" + an.name()
                                 + "_index ON " + table.getTableName() + "(" + an.name() + ")";
+                        LogUtils.v("---------------------LightSQLite--------------------------");
                         LogUtils.v(sqlStr);
+                        LogUtils.v("----------------------------------------------------------");
                         try {
                             db.execSQL(sqlStr);
                         } catch (Exception e) {
@@ -258,7 +262,9 @@ public abstract class AbstractDBHelper {
                                         }
 
                                     }
+                                    LogUtils.v("---------------------LightSQLite--------------------------");
                                     LogUtils.v(addSql.toString());
+                                    LogUtils.v("----------------------------------------------------------");
                                     try {
                                         db.execSQL(addSql.toString());
                                     } catch (Exception e) {

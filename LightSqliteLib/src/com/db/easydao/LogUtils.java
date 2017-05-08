@@ -8,7 +8,7 @@ import android.util.Log;
 
 class LogUtils {
 
-    private static final String TAG = "LightSQL";
+    private static final String TAG = "LightSQLite";
 
     protected static void v(String msg) {
         Log.v(TAG, msg);
