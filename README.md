@@ -26,11 +26,36 @@ public class StudentTable extends AbstractTable<StudentItem> {
         return TABLE_NAME;
     }
 
-    // 当数据库版本号更新时，该方法被执行
-    @Override
+    // 当数据库版本号更新时，该方法被执行，当对表的结构修改时可以在这里操作，增加字段不需要
+    @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
 }
+
+配置学生实体类
+
+public class StudentItem {  
+  
+    public static final String FIELD_S_ID = "s_id";  
+    public static final String FIELD_S_NAME = "s_name";  
+    public static final String FIELD_S_AGE = "age";  
+    public static final String FIELD_S_CLASS = "class";  
+  
+    @Column(name = FIELD_S_ID, unique = true, index = true, notNull = true)  
+    private int id;  
+  
+    @Column(name = FIELD_S_NAME, notNull = true)  
+    private String name;  
+  
+    @Column(name = FIELD_S_AGE, notNull = true)  
+    private int age;  
+  
+    @Column(name = FIELD_S_CLASS)  
+    private String inClass;  
+  
+    //GET and SET 方法就省略了
+    .....  
+}  
 
 配置数据库
 
@@ -90,4 +115,4 @@ StudentTable.getsInstance().remove(...);
     
 
 
-有问题联系QQ: 357406409
+遇到问题和好的建议请联系QQ: 357406409 在此谢过
