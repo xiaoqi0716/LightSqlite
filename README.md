@@ -27,9 +27,11 @@ public class StudentTable extends AbstractTable<StudentItem> {
     }
 
     // 当数据库版本号更新时，该方法被执行，当对表的结构修改时可以在这里操作，增加字段不需要
+    
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
+    
 }
 
 配置学生实体类
