@@ -46,17 +46,17 @@ public class StudentItem {  
   
     //---------------数据库版本为1时的字段列表
     @Column(name = FIELD_S_ID, unique = true, index = true, notNull = true) 
-    private int id;  
-  
+    private int id;  //学生ID
+  
     @Column(name = FIELD_S_NAME, notNull = true)  
-    private String name;  
-  
+    private String name;  //姓名
+  
     @Column(name = FIELD_S_AGE, notNull = true)  
-    private int age;  
-  
+    private int age;  //年龄
+  
     @Column(name = FIELD_S_CLASS)  
-    private String inClass;  
-    
+    private String inClass;  //班级
+   
     //-----------------数据库版本号为2时的新增字段列表---------------
     //表字段增加时，直接往下写，会自动为表增加字段
   
